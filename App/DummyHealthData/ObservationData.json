@@ -1,0 +1,267 @@
+
+{
+    "Observations": [
+        {
+            "resourceType":"Observation",
+            "meta":{
+                "profile": [
+                    "http://phr.kanta.fi/StructureDefinition/fiphr-heartrate-stu3"
+                ]
+            },
+            "language":"en",
+            "identifier": [
+                {
+                    "system":"urn:ietf:rfc:3986",
+                    "value":"urn:uuid:6be2ba00-2bea-4784-bf51-436453d84674"
+                }
+            ],
+            "status":"final",
+            "category": [
+                {
+                    "coding": [
+                        {
+                            "system":"http://hl7.org/fhir/observation-category",
+                            "code":"vital-signs"
+                        }
+                    ]
+                }
+            ],
+            "code":{
+                "coding": [
+                    {
+                        "system":"http://loinc.org",
+                        "code":"8867-4",
+                        "display":"Heart rate"
+                    }
+                ]
+            },
+            "subject":{
+                "reference":"Patient/352186dd-8f66-4e7d-a7fd-9e257d4b7080"
+            },
+            "effectiveDateTime":"2017-11-20T11:46:00+02:00",
+            "issued":"2017-11-20T11:46:00+02:00",
+            "performer": [
+                {
+                    "reference":"Patient/352186dd-8f66-4e7d-a7fd-9e257d4b7080"
+                }
+            ],
+            "valueQuantity":{
+                "value":"125",
+                "unit":"/min",
+                "system":"http://unitsofmeasure.org",
+                "code":"/min"
+            }
+        },
+
+        {
+            "resourceType":"Observation",
+            "meta":{
+                "profile": [
+                    "http://phr.kanta.fi/StructureDefinition/fiphr-heartrate-stu3"
+                ]
+            },
+            "language":"en",
+            "identifier": [
+                {
+                    "system":"urn:ietf:rfc:3986",
+                    "value":"urn:uuid:6be2ba00-2bea-4784-bf51-436453d84674"
+                }
+            ],
+            "status":"final",
+            "category": [
+                {
+                    "coding": [
+                        {
+                            "system":"http://hl7.org/fhir/observation-category",
+                            "code":"vital-signs"
+                        }
+                    ]
+                }
+            ],
+            "code":{
+                "coding": [
+                    {
+                        "system":"http://loinc.org",
+                        "code":"8867-4",
+                        "display":"Heart rate"
+                    }
+                ]
+            },
+            "subject":{
+                "reference":"Patient/352186dd-8f66-4e7d-a7fd-9e257d4b7080"
+            },
+            "effectiveDateTime":"2017-11-20T11:50:00+02:00",
+            "issued":"2017-11-20T11:50:00+02:00",
+            "performer": [
+                {
+                    "reference":"Patient/352186dd-8f66-4e7d-a7fd-9e257d4b7080"
+                }
+            ],
+            "valueQuantity":{
+                "value":"165",
+                "unit":"/min",
+                "system":"http://unitsofmeasure.org",
+                "code":"/min"
+            }
+        },
+
+        {
+            "resourceType":"Observation",
+            "meta":{
+                "profile": [
+                    "http://phr.kanta.fi/StructureDefinition/fiphr-heartrate-stu3"
+                ]
+            },
+            "language":"en",
+            "identifier": [
+                {
+                    "system":"urn:ietf:rfc:3986",
+                    "value":"urn:uuid:6be2ba00-2bea-4784-bf51-436453d84674"
+                }
+            ],
+            "status":"final",
+            "category": [
+                {
+                    "coding": [
+                        {
+                            "system":"http://hl7.org/fhir/observation-category",
+                            "code":"vital-signs"
+                        }
+                    ]
+                }
+            ],
+            "code":{
+                "coding": [
+                    {
+                        "system":"http://loinc.org",
+                        "code":"8867-4",
+                        "display":"Heart rate"
+                    }
+                ]
+            },
+            "subject":{
+                "reference":"Patient/352186dd-8f66-4e7d-a7fd-9e257d4b7080"
+            },
+            "effectiveDateTime":"2017-11-20T11:55:00+02:00",
+            "issued":"2017-11-20T11:55:00+02:00",
+            "performer": [
+                {
+                    "reference":"Patient/352186dd-8f66-4e7d-a7fd-9e257d4b7080"
+                }
+            ],
+            "valueQuantity":{
+                "value":"90",
+                "unit":"/min",
+                "system":"http://unitsofmeasure.org",
+                "code":"/min"
+            }
+        },
+
+        {
+            "resourceType":"Observation",
+            "meta":{
+                "profile": [
+                    "http://phr.kanta.fi/StructureDefinition/fiphr-heartrate-stu3"
+                ]
+            },
+            "language":"en",
+            "identifier": [
+                {
+                    "system":"urn:ietf:rfc:3986",
+                    "value":"urn:uuid:6be2ba00-2bea-4784-bf51-436453d84674"
+                }
+            ],
+            "status":"final",
+            "category": [
+                {
+                    "coding": [
+                        {
+                            "system":"http://hl7.org/fhir/observation-category",
+                            "code":"vital-signs"
+                        }
+                    ]
+                }
+            ],
+            "code":{
+                "coding": [
+                    {
+                        "system":"http://loinc.org",
+                        "code":"8867-4",
+                        "display":"Heart rate"
+                    }
+                ]
+            },
+            "subject":{
+                "reference":"Patient/352186dd-8f66-4e7d-a7fd-9e257d4b7080"
+            },
+            "effectiveDateTime":"2017-11-20T12:10:00+02:00",
+            "issued":"2017-11-20T12:10:00+02:00",
+            "performer": [
+                {
+                    "reference":"Patient/352186dd-8f66-4e7d-a7fd-9e257d4b7080"
+                }
+            ],
+            "valueQuantity":{
+                "value":"110",
+                "unit":"/min",
+                "system":"http://unitsofmeasure.org",
+                "code":"/min"
+            }
+        } ,
+
+        {
+            "resourceType":"Observation",
+            "meta":{
+                "profile": [
+                    "http://phr.kanta.fi/StructureDefinition/fiphr-heartrate-stu3"
+                ]
+            },
+            "language":"en",
+            "identifier": [
+                {
+                    "system":"urn:ietf:rfc:3986",
+                    "value":"urn:uuid:6be2ba00-2bea-4784-bf51-436453d84674"
+                }
+            ],
+            "status":"final",
+            "category": [
+                {
+                    "coding": [
+                        {
+                            "system":"http://hl7.org/fhir/observation-category",
+                            "code":"vital-signs"
+                        }
+                    ]
+                }
+            ],
+            "code":{
+                "coding": [
+                    {
+                        "system":"http://loinc.org",
+                        "code":"8867-4",
+                        "display":"Heart rate"
+                    }
+                ]
+            },
+            "subject":{
+                "reference":"Patient/352186dd-8f66-4e7d-a7fd-9e257d4b7080"
+            },
+            "effectiveDateTime":"2017-11-20T12:20:00+02:00",
+            "issued":"2017-11-20T12:20:00+02:00",
+            "performer": [
+                {
+                    "reference":"Patient/352186dd-8f66-4e7d-a7fd-9e257d4b7080"
+                }
+            ],
+            "valueQuantity":{
+                "value":"102",
+                "unit":"/min",
+                "system":"http://unitsofmeasure.org",
+                "code":"/min"
+            }
+        }
+
+    ] 
+}
+
+
