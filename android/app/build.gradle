@@ -137,7 +137,6 @@ android {
 }
 
 dependencies {
-    compile project(':react-native-device-info')
     compile project(':react-native-i18n')
     compile project(':react-native-vector-icons')
     compile project(':react-native-gesture-handler')

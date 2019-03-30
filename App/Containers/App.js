@@ -1,5 +1,5 @@
 
-console.disableYellowBox = true
+//console.disableYellowBox = true
 
 import '../Config'
 import DebugConfig from '../Config/DebugConfig'
