@@ -17,7 +17,7 @@ export default class ConnectScreen extends Component {
         noiseLevelData: [],
         kantaMeasurement: [],
         kantaResp: "",
-        icelandData: ""  //can be converted to object with JSON.parse?
+        icelandData: "",  //can be converted to object with JSON.parse?
     }
 
     DeviceEventEmitter.addListener(Events.USER_AUTH_ACCEPT, this.onUserAuthAccept)
@@ -90,7 +90,7 @@ export default class ConnectScreen extends Component {
 }
 
 /*
-    // Connect to Iceland Directorate of Health API, obtain patient data 
+    // Connect to Iceland Directorate of Health API, obtain patient data
 //patientID = 0206929999
 
     Format results :
@@ -187,13 +187,13 @@ export default class ConnectScreen extends Component {
             })
 
         })
-    
+
   }
 
   UploadObservationsToKanta = () =>{
 
-  
-    
+
+
   //  fetch("../../App/DummyHealthData/ObservationData.json")
   //  .then((response) => response.json())
   //  .then((responseJson) => {
@@ -202,30 +202,33 @@ export default class ConnectScreen extends Component {
 
         fetch ("http://fhirsandbox.kanta.fi/phr-resourceserver/baseStu3/Observation", {
           method: 'POST',
-          
+
           headers: {
             Accept: 'application/json',
             'Content-Type': 'application/json',
           },
-          
+
           body: JSON.stringify(kantaFile.Observations[i])
         }).then((response) => {
-      
+        //=> response.json())
+          //.then((responseJson) => {
+
+            //this.setState({kantaResp: JSON.stringify(response)})
 
           })
 
-       
+
 
       }
 
-      
-      
+
+
     //})
-    
 
-      
 
-    
+
+
+
     }
 
 
@@ -257,8 +260,8 @@ export default class ConnectScreen extends Component {
     })
   }
 
-  
-  
+
+
 
 }
 

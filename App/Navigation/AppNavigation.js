@@ -15,6 +15,7 @@ import RegisterScreen from '../Containers/Register/RegisterScreen'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import DataViewScreen from '../Containers/Setting/DataViewScreen'
 import DataSourceScreen from '../Containers/Setting/DataSourceScreen'
+import ReportShareConfirmScreen from '../Containers/Report/ReportShareConfirmScreen'
 
 
 const SettingNavigationStack = createStackNavigator(
@@ -48,6 +49,11 @@ const reportNavigationStack = createStackNavigator(
     },
     ReportHealthDataScreen: {
       screen: ReportHealthDataScreen,
+      navigationOptions: { header: null }
+    },
+
+    ReportShareConfirmScreen: {
+      screen: ReportShareConfirmScreen,
       navigationOptions: { header: null }
     },
     ReportShareFinnishScreen: {
@@ -102,7 +108,7 @@ const PrimaryNav = createBottomTabNavigator({
 }, {
     // Default config for all screens
     headerMode: 'none',
-    initialRouteName: 'reportNavigationStack',
+    initialRouteName: 'HomeScreen',
     navigationOptions: {
       headerStyle: styles.header
     }

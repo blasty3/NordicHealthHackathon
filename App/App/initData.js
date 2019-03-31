@@ -80,10 +80,12 @@ export default initData = {
     {
       text: 'Appointment data',
       value: true,
+      id: 'appointment'
     },
     {
       text: 'Prescriptions',
       value: true,
+      id: 'prescriptions'
 
     }
   ],
@@ -92,27 +94,30 @@ export default initData = {
     {
       text: 'Sleep',
       value: true,
+      id: 'sleep'
 
     },
     {
       text: 'Heart rate',
       value: true,
+      id: 'heartrate'
 
     },
     {
       text: 'Noise level',
       value: true,
+      id: 'noise'
 
     },
     {
       text: 'Appointment data',
       value: false,
-
+      id: 'appointment'
     },
     {
       text: 'Prescriptions',
       value: false,
-
+      id: 'prescriptions'
     }
   ],
 

@@ -22,7 +22,12 @@ export default class ReportShareFinnishScreen extends Component {
                     <View style={styles.container}>
                         <Image source={Images.icon_message_success} style={styles.imgSuccess} />
                         <Text style={{color:Colors.red1,marginTop:Metrics.sizeHeight * 3,marginBottom:Metrics.sizeHeight *3,fontWeight:"500"}}>Thank you!</Text>
-                        <Text style={{color:Colors.grey3,width:Metrics.sizeWidth * 40,textAlign:"center"}}>Dr. E Tukio has received your Health Data Report and will get back to you as soon as possible.</Text>
+                        <Text style={{color:Colors.grey3,width:Metrics.sizeWidth * 40,textAlign:"center"}}>Your EHR has been updated with the given data!</Text>
+                        <TouchableOpacity onPress={() => {
+                          this.props.navigation.navigate("HomeScreen")
+                        }}>
+                          <Text style={styles.textButton}>Go back Home</Text>
+                        </TouchableOpacity>
                     </View>
                 </ScrollView>
             </View>
