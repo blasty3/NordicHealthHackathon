@@ -50,7 +50,7 @@ function getDateObj(d) {
 
 function showMessage(message) {
     Alert.alert(
-        "MOVAD",
+        "GaIoTa Care",
         message,
         [
             {
@@ -277,7 +277,7 @@ const Utils = {
         str = str.replace(/đ/g, "d");
         str = str.replace(/!|@|%|\^|\*|\(|\)|\+|\=|\<|\>|\?|\/|,|\.|\:|\;|\'| |\"|\&|\#|\[|\]|~|$|_/g, "-");
 
-        str = str.replace(/-+-/g, "-"); //thay thế 2- thành 1- 
+        str = str.replace(/-+-/g, "-"); //thay thế 2- thành 1-
         str = str.replace(/^\-+|\-+$/g, "");
 
         return str;

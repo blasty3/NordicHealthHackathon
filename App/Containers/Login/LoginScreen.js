@@ -90,11 +90,11 @@ class LoginScreen extends Component {
     }
 
     componentWillReceiveProps(newProps) {
-        if (!Utils.isUndefined(newProps.user) && this.state.isLogin && newProps.loginted && !newProps.errorLogin) {
+        if (!Utils.isUndefined(newProps.user) && this.state.isLogin && newProps.loggedIn && !newProps.errorLogin) {
             Utils.showMessage("Login success");
             this.props.navigation.navigate("PrimaryNav")
         } else {
-            if (!Utils.isUndefined(newProps.user) && this.state.isLogin && !newProps.loginted && newProps.errorLogin) {
+            if (!Utils.isUndefined(newProps.user) && this.state.isLogin && !newProps.loggedIn && newProps.errorLogin) {
                 Utils.showMessage("Login failure");
             }
         }
@@ -103,9 +103,9 @@ class LoginScreen extends Component {
 
 
 const mapStateToProps = (state) => {
-    const { user, loginted, errorLogin } = state.user
+    const { user, loggedIn: loggedIn, errorLogin } = state.user
     return {
-        user, loginted, errorLogin
+        user, loggedIn, errorLogin
     }
 }
 

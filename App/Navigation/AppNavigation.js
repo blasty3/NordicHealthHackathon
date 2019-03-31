@@ -6,11 +6,11 @@ import styles from './Styles/NavigationStyles'
 import HomeScreen from '../Containers/Home/HomeScreen'
 import CircleScreen from '../Containers/Circle/CircleScreen'
 import ReportScreen from '../Containers/Report/ReportScreen'
+import ReportHealthData from '../Containers/Report/ReportHealthData'
 import SettingScreen from '../Containers/Setting/SettingScreen'
 import LoginScreen from '../Containers/Login/LoginScreen'
 import RegisterScreen from '../Containers/Register/RegisterScreen'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-
 
 // Manifest of possible screens
 const PrimaryNav = createBottomTabNavigator({
@@ -23,7 +23,7 @@ const PrimaryNav = createBottomTabNavigator({
     navigationOptions: navigationOption("sync", "My Circle")
   },
   ReportScreen: {
-    screen: ReportScreen,
+    screen: ReportHealthData,
     navigationOptions: navigationOption("chart-line-variant", "Report")
   },
   SettingScreen: {
@@ -33,7 +33,7 @@ const PrimaryNav = createBottomTabNavigator({
 }, {
     // Default config for all screens
     headerMode: 'none',
-    initialRouteName: 'HomeScreen',
+    initialRouteName: 'ReportScreen',
     navigationOptions: {
       headerStyle: styles.header
     }

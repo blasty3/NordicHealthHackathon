@@ -1,13 +1,27 @@
 import React, { Component } from 'react'
-import {Text, View } from 'react-native'
+import SettingDataSourceScree from './SettingDataSourceScree';
+import SettingSelectScreen from './SettingSelectScreen';
 
 // Styles
 export default class SettingScreen extends Component {
-  render () {
-    return (
-      <View style={{flex:1,justifyContent:"center",alignItems:"center"}}>
-          <Text>SettingScreen</Text>
-      </View>
-    )
+  constructor() {
+    super()
+    this.state = {
+      isSelectDataSource: true
+    }
+  }
+  render() {    
+    if (!this.state.isSelectDataSource) return <SettingDataSourceScree 
+    onPress={() => {
+      this.setState({
+        isSelectDataSource: true
+      })
+    }}/>
+    return <SettingSelectScreen
+      onPress={() => {
+        this.setState({
+          isSelectDataSource: false
+        })
+      }} />
   }
 }

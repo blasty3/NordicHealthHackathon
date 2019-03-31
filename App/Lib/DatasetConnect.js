@@ -12,4 +12,3 @@ GetPatientDataFromIceland = (patientID) => {
     })
 }
 
-Extract

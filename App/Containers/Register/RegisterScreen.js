@@ -18,7 +18,7 @@ class RegisterScreen extends Component {
             email: "",
             password: "",
             passwordConfirm: "",
-            isRegiter: ""
+            isRegister: ""
         }
     }
 
@@ -113,14 +113,14 @@ class RegisterScreen extends Component {
                 email: email,
                 password: password
             }
-            this.state.isRegiter = true
+            this.state.isRegister = true
 
             this.props.register(params)
         }
     }
 
     componentWillReceiveProps(newProps) {
-        if (!Utils.isUndefined(newProps.user) && this.state.isRegiter) {
+        if (!Utils.isUndefined(newProps.user) && this.state.isRegister) {
             Utils.showMessage("Register success");
             this.props.navigation.navigate("LoginScreen")
         }

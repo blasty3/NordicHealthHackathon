@@ -7,7 +7,7 @@ import ReduxPersist from '../Config/ReduxPersist'
 
 // Styles
 import styles from './Styles/RootContainerStyles'
-import LoginScreen from './Login/LoginScreen';
+import {Colors} from '../Themes';
 
 class RootContainer extends Component {
   
@@ -21,7 +21,7 @@ class RootContainer extends Component {
   render () {
     return (
       <View style={styles.applicationView}>
-        <StatusBar barStyle='light-content' backgroundColor="transparent" />
+        <StatusBar barStyle='light-content' backgroundColor={Colors.red1} />
         <ReduxNavigation />
         {/* <LoginScreen/> */}
       </View>

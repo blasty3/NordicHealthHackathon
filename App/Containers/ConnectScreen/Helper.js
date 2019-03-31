@@ -81,7 +81,7 @@ class Helper {
 
     */
 
-    UploadObservationsKanta(arrayOfMeasurements){
+    UploadObservationsKanta(){
 
 
       fetch("../App/DummyHealthData/ObservationData.json")
@@ -96,7 +96,7 @@ class Helper {
               Accept: 'application/json',
               'Content-Type': 'application/json',
             },
-            body: JSON.stringify(arrayOfMeasurements[i])
+            body: JSON.stringify(responseJson[i])
           });
 
         }
