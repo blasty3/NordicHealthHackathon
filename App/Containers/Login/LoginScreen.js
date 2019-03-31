@@ -70,15 +70,15 @@ class LoginScreen extends Component {
 
     onLogin = () => {
         const { fullname, email, password } = this.state;
-        
+        /*
         if (Utils.isUndefined(email) || Utils.isUndefined(password)) {
             Utils.showMessage("Please enter full information")
         } else if (!StringUtils.validatePassword(password)) {
             Utils.showMessage("Password length must be longer than 6 characters")
         } else if (!StringUtils.validateEmail(email)) {
             Utils.showMessage("Email is not in the correct format")
-        } else 
-        
+        } else
+        */
         {
             this.state.isLogin = true
 
@@ -93,7 +93,8 @@ class LoginScreen extends Component {
 
     checkLogin = (newProps) => {
       console.log("componentWillReceiveProps", newProps)
-      if (!Utils.isUndefined(newProps.user) && newProps.loggedIn && !newProps.errorLogin) {
+      //if (!Utils.isUndefined(newProps.user) && newProps.loggedIn && !newProps.errorLogin) {
+      if (newProps.loggedIn && !newProps.errorLogin) {
         this.props.navigation.navigate("PrimaryNav")
       } else {
         if (this.state.isLogin && newProps.errorLogin) {

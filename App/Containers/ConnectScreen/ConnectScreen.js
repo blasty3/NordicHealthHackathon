@@ -210,10 +210,7 @@ export default class ConnectScreen extends Component {
           
           body: JSON.stringify(kantaFile.Observations[i])
         }).then((response) => {
-        //=> response.json())
-          //.then((responseJson) => {
-
-            //this.setState({kantaResp: JSON.stringify(response)})
+      
 
           })
 

@@ -6,6 +6,9 @@ import styles from './Styles/NavigationStyles'
 import HomeScreen from '../Containers/Home/HomeScreen'
 import CircleScreen from '../Containers/Circle/CircleScreen'
 import ReportScreen from '../Containers/Report/ReportScreen'
+import ReportShareScreen from '../Containers/Report/ReportShareScreen'
+import ReportShareFinnishScreen from '../Containers/Report/ReportShareFinnishScreen'
+import ReportHealthDataScreen from '../Containers/Report/ReportHealthDataScreen'
 import SettingScreen from '../Containers/Setting/SettingScreen'
 import LoginScreen from '../Containers/Login/LoginScreen'
 import RegisterScreen from '../Containers/Register/RegisterScreen'
@@ -28,6 +31,35 @@ const SettingNavigationStack = createStackNavigator(
     initialRouteName: 'SettingScreen',
   }
 )
+
+const reportNavigationStack = createStackNavigator(
+  {
+    ReportScreen: {
+      screen: ReportScreen,
+      navigationOptions: { header: null }
+    },
+    ReportShareScreen: {
+      screen: ReportShareScreen,
+      navigationOptions: { header: null }
+    },
+    ReportShareScreen: {
+      screen: ReportShareScreen,
+      navigationOptions: { header: null }
+    },
+    ReportHealthDataScreen: {
+      screen: ReportHealthDataScreen,
+      navigationOptions: { header: null }
+    },
+    ReportShareFinnishScreen: {
+      screen: ReportShareFinnishScreen,
+      navigationOptions: { header: null }
+    },
+  }, {
+    initialRouteName: 'ReportScreen',
+  }
+)
+
+
 
 
 const HomeNavigationStack = createStackNavigator(
@@ -59,8 +91,8 @@ const PrimaryNav = createBottomTabNavigator({
     screen: CircleScreen,
     navigationOptions: navigationOption("sync", "My Circle")
   },
-  ReportScreen: {
-    screen: ReportScreen,
+  reportNavigationStack: {
+    screen: reportNavigationStack,
     navigationOptions: navigationOption("chart-line-variant", "Report")
   },
   SettingScreen: {
@@ -70,7 +102,7 @@ const PrimaryNav = createBottomTabNavigator({
 }, {
     // Default config for all screens
     headerMode: 'none',
-    initialRouteName: 'HomeScreen',
+    initialRouteName: 'reportNavigationStack',
     navigationOptions: {
       headerStyle: styles.header
     }
@@ -84,7 +116,7 @@ const stackNavigation = createStackNavigator(
   }, {
     // Default config for all screens
     headerMode: 'none',
-    initialRouteName: 'LoginScreen',
+    initialRouteName: 'PrimaryNav',
     navigationOptions: {
       headerStyle: styles.header
     }

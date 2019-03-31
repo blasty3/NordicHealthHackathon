@@ -39,19 +39,22 @@ class HomeScreen extends Component {
   }
 
   render() {
-    return (
-      <View style={{ flex: 1 }}>
-        <HeaderComponent
-          titleScreen={"HEALTH DATA"}
-          onPress={()=> {}}
-        />
-        <ScrollView style={{ marginTop: Metrics.sizeHeight * 2 }}>
-        <ChartComponent title="Personal Health" chartData={[{title:"Sleep"},{title:"Heart rate"}]}/>
-        <ChartComponent title="Environmental data" chartData={[{title:"Noise level"}]}/>
-        <DataComponent  title="Hospital History" data ={data}/>
-        </ScrollView>
-      </View>
-    )
+    if (this.props.dataSource != null && this.props.dataView != null) {
+      return (
+        <View style={{ flex: 1 }}>
+          <HeaderComponent
+            titleScreen={"HEALTH DATA"}
+            onPress={()=> {}}
+          />
+          <ScrollView style={{ marginTop: Metrics.sizeHeight * 2 }}>
+            <ChartComponent title="Personal Health" chartData={[{title:"Sleep"},{title:"Heart rate"}]}/>
+            <ChartComponent title="Environmental data" chartData={[{title:"Noise level"}]}/>
+            <DataComponent  title="Hospital History" data ={data}/>
+          </ScrollView>
+        </View>
+      )
+    }
+    return null
   }
 
   gotoSettingScreen = (screen) => {
@@ -71,6 +74,8 @@ class HomeScreen extends Component {
 
     if (props.dataSource == null) {
       this.gotoSettingScreen("DataSourceScreen")
+    } else if (props.dataView == null) {
+      this.gotoSettingScreen("DataViewScreen")
     }
   }
 }

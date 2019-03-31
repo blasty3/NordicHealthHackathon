@@ -5,13 +5,13 @@ import { Metrics, Images, Colors } from '../../Themes'
 // Styles
 export default class HeaderComponent extends Component {
     render() {
-        let { titleScreen, onBack ,onPress} = this.props
+        let { titleScreen, onBack, onPress } = this.props
         return (
             <View>
                 <View style={styles.container}>
                     <View>{
                         onBack ?
-                            <TouchableOpacity>
+                            <TouchableOpacity onPress ={()=>this.props.onGoBack()}>
                                 <Image source={Images.icon_arrow} style={styles.logoBack} />
                             </TouchableOpacity>
                             : null
@@ -22,12 +22,14 @@ export default class HeaderComponent extends Component {
                         <Text style={styles.titleHeader}> CARE</Text>
                     </View>
                 </View>
-                <TouchableOpacity onPress ={()=>onPress()}>
-                    <View style={{ flexDirection: "row" }}>
-                        <Text style={styles.titleScreen}>{titleScreen.toUpperCase()}</Text>
-                        <Text style={{}}></Text>
-                    </View>
-                </TouchableOpacity>
+                {titleScreen ?
+                    <TouchableOpacity onPress={() => onPress()}>
+                        <View style={{ flexDirection: "row" }}>
+                            <Text style={styles.titleScreen}>{titleScreen.toUpperCase()}</Text>
+                            <Text style={{}}></Text>
+                        </View>
+                    </TouchableOpacity> : null
+                }
             </View>
         )
     }

@@ -13,7 +13,7 @@ export default class ReportScreen extends Component {
   render() {
     return (
       <View style={{ flex: 1 }}>
-        <HeaderComponent titleScreen="Health Report" onPress={() => { }} />
+        <HeaderComponent titleScreen="Health Report" onPress={() => { this.props.navigation.navigate("ReportHealthDataScreen") }} />
         <ScrollView>
           <View style={{ alignItems: "center", justifyContent: "center", marginTop: Metrics.sizeHeight * 4, marginBottom: Metrics.sizeHeight * 4}}>
             <Text style={styles.text}>compose a health data report</Text>
@@ -31,8 +31,8 @@ export default class ReportScreen extends Component {
             renderItem={({ item }) => this.renderItemContent(item)}
           />
            <View style={styles.buttonContainer}>
-            <TouchableOpacity style={styles.button} onPress={() => {
-              // this.props.navigation.navigate("RegisterScreen")
+            <TouchableOpacity  onPress={() => {
+              this.props.navigation.navigate("ReportHealthDataScreen")
             }}>
               <Text style={styles.textButton}>Generate report</Text>
             </TouchableOpacity>

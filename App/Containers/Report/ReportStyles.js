@@ -45,14 +45,14 @@ export default styles = StyleSheet.create({
         // height:height*6,
         paddingTop: height * 3,
         paddingBottom: height * 3,
-        marginTop:height * 6
+        marginTop: height * 6
     },
-    textButton: {
-        color: Colors.red1,
-        padding: width * 7,
-        paddingTop: width * 2,
-        paddingBottom: width * 2,
-    },
+    // textButton: {
+    //     color: Colors.red1,
+    //     padding: width * 7,
+    //     paddingTop: width * 2,
+    //     paddingBottom: width * 2,
+    // },
 
     button: {
         overflow: 'hidden',
@@ -60,6 +60,31 @@ export default styles = StyleSheet.create({
         borderWidth: width * 0.3,
         backgroundColor: "white"
     },
+
+    textButton: {
+        overflow: 'hidden',
+        borderColor: Colors.red1,
+        borderWidth: width * 0.1,
+        backgroundColor: "white",
+        padding: width * 2.5,
+        width: width * 40,
+        color:Colors.red1,
+        textAlign:"center",
+        marginTop:height*2
+    },
+
+    textShare: {
+        color: Colors.grey4,
+        marginTop:height*4,
+        marginBottom:height*2
+    },
+
+    imghealth: {
+        height: height * 25,
+        width: width * 32,
+        resizeMode: "stretch"
+    },
+
     text: {
         textAlign: "center",
         color: Colors.grey4,
@@ -77,19 +102,30 @@ export default styles = StyleSheet.create({
         width: width * 50,
         alignItems: "center",
         justifyContent: "center",
-        borderWidth: width *0.1,
-        borderColor:Colors.grey4,
-        flexDirection:"row",
+        borderWidth: width * 0.1,
+        borderColor: Colors.grey4,
+        flexDirection: "row",
         paddingTop: width * 3,
         paddingBottom: width * 3
     },
-    iconDown:{
+    iconDown: {
         height: height * 1.1,
         width: width * 4,
         resizeMode: "stretch",
         marginLeft: width * 3
     },
-    textDown:{
-        color:Colors.red1
+    textDown: {
+        color: Colors.red1
+    },
+    container: {
+        alignItems: "center",
+        justifyContent: "center",
+        flex: 1,
+        marginTop:height*7
+    },
+    imgSuccess:{
+        width:width * 45,
+        height:height*22,
+        resizeMode: "stretch",
     }
 })
