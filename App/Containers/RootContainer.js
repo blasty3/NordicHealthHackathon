@@ -10,7 +10,7 @@ import styles from './Styles/RootContainerStyles'
 import {Colors} from '../Themes';
 
 class RootContainer extends Component {
-  
+
   componentDidMount () {
     // if redux persist is not active fire startup action
     if (!ReduxPersist.active) {
@@ -23,7 +23,6 @@ class RootContainer extends Component {
       <View style={styles.applicationView}>
         <StatusBar barStyle='light-content' backgroundColor={Colors.red1} />
         <ReduxNavigation />
-        {/* <LoginScreen/> */}
       </View>
     )
   }

@@ -6,11 +6,28 @@ import styles from './Styles/NavigationStyles'
 import HomeScreen from '../Containers/Home/HomeScreen'
 import CircleScreen from '../Containers/Circle/CircleScreen'
 import ReportScreen from '../Containers/Report/ReportScreen'
-import ReportHealthData from '../Containers/Report/ReportHealthData'
 import SettingScreen from '../Containers/Setting/SettingScreen'
 import LoginScreen from '../Containers/Login/LoginScreen'
 import RegisterScreen from '../Containers/Register/RegisterScreen'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import SettingSelectScreen from '../Containers/Setting/SettingSelectScreen'
+import SettingDataSourceScreen from '../Containers/Setting/SettingDataSourceScreen'
+
+
+const SettingNavigationStack = createStackNavigator(
+  {
+    SettingScreen: {
+      screen: SettingDataSourceScreen,
+      navigationOptions: { header: null }
+    },
+    SystemSettingScreen: {
+      screen: SettingSelectScreen,
+      navigationOptions: { header: null }
+    }
+  }, {
+    initialRouteName: 'SettingScreen',
+  }
+)
 
 // Manifest of possible screens
 const PrimaryNav = createBottomTabNavigator({
@@ -23,17 +40,17 @@ const PrimaryNav = createBottomTabNavigator({
     navigationOptions: navigationOption("sync", "My Circle")
   },
   ReportScreen: {
-    screen: ReportHealthData,
+    screen: ReportScreen,
     navigationOptions: navigationOption("chart-line-variant", "Report")
   },
   SettingScreen: {
-    screen: SettingScreen,
+    screen: SettingNavigationStack,
     navigationOptions: navigationOption("settings", "Settings")//TODO: i18n
   }
 }, {
     // Default config for all screens
     headerMode: 'none',
-    initialRouteName: 'ReportScreen',
+    initialRouteName: 'SettingScreen',
     navigationOptions: {
       headerStyle: styles.header
     }
@@ -47,7 +64,7 @@ const stackNavigation = createStackNavigator(
   }, {
     // Default config for all screens
     headerMode: 'none',
-    initialRouteName: 'PrimaryNav',
+    initialRouteName: 'LoginScreen',
     navigationOptions: {
       headerStyle: styles.header
     }

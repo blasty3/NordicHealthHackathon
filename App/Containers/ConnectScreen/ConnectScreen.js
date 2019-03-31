@@ -4,6 +4,10 @@ import { Text, ScrollView, DeviceEventEmitter, Button, TouchableOpacity } from '
 import {GaiotaCareNativeBridge} from '../../GaiotaCareBridge'
 import Events from '../../Constants/Events'
 import Utils from '../../Utils/Utils'
+
+import kantaFile from '../../DummyHealthData/ObservationData.json'
+
+
 // Styles
 export default class ConnectScreen extends Component {
 
@@ -11,8 +15,8 @@ export default class ConnectScreen extends Component {
     super()
     this.state = {
         noiseLevelData: [],
-        heartRate: [],
-        kantaObservation: [],
+        kantaMeasurement: [],
+        kantaResp: "",
         icelandData: ""  //can be converted to object with JSON.parse?
     }
 
@@ -27,8 +31,12 @@ export default class ConnectScreen extends Component {
           <Text>ConnectScreen</Text>
           <Text> HealthResults {this.state.icelandData}  </Text>
           <Text> NoiseResults {this.state.noiseLevelData}  </Text>
+          <Text> KantaResp {this.state.kantaResp}  </Text>
+           <Text> KantaData {this.state.heartRate}  </Text>
           <Button title="IcelandHealth" onPress = {this.GetIcelandHealth}>  </Button>
           <Button title="NoiseData" onPress = {this.GetNoiseEnvironment}>  </Button>
+          <Button title="UploadToKanta" onPress = {this.UploadObservationsToKanta}>  </Button>
+          <Button title="DownloadFromKanta" onPress = {() => {this.GetAllPatientObservationsKanta("352186dd-8f66-4e7d-a7fd-9e257d4b7080")}}>  </Button>
         <TouchableOpacity
           onPress={() => {
             this.onConnectDigiMe()
@@ -165,34 +173,50 @@ export default class ConnectScreen extends Component {
     
   }
 
-  UploadObservationsKanta(){
+  UploadObservationsToKanta = () =>{
 
+  
+    
+  //  fetch("../../App/DummyHealthData/ObservationData.json")
+  //  .then((response) => response.json())
+  //  .then((responseJson) => {
 
-    fetch("../App/DummyHealthData/ObservationData.json")
-    .then((response) => response.json())
-    .then((responseJson) => {
-
-      for(i=0;i<responseJson.length;i++){
+      for(i=0;i<kantaFile.length;i++){
 
         fetch ("http://fhirsandbox.kanta.fi/phr-resourceserver/baseStu3/Observation", {
           method: 'POST',
+          
           headers: {
             Accept: 'application/json',
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify(responseJson[i])
-        });
+          
+          body: JSON.stringify(kantaFile.Observations[i])
+        }).then((response) => {
+        //=> response.json())
+          //.then((responseJson) => {
+
+            //this.setState({kantaResp: JSON.stringify(response)})
+
+          })
+
+       
 
       }
+
       
-    })
+      
+    //})
+    
 
       
 
     
     }
 
-  GetAllPatientObservationsKanta = (patientID) => {
+
+    //Kanta patient ID : 352186dd-8f66-4e7d-a7fd-9e257d4b7080
+  GetAllPatientObservationsKanta(patientID) {
     fetch ("http://fhirsandbox.kanta.fi/phr-resourceserver/baseStu3/Observation?patient="+patientID+"&_pretty=true")
     .then((response) => response.json())
     .then((responseJson) => {
@@ -201,17 +225,25 @@ export default class ConnectScreen extends Component {
 
         for (i=0;i<responseJson["total"];i++){
 
-          arr[i] = responseJson["entry"][i]["resource"]
+          var time = responseJson["entry"][i]["resource"]["effectiveDateTime"];
+          var value = responseJson["entry"][i]["resource"]["valueQuantity"]["value"];
+
+          arr.push(JSON.stringify({
+              time : time,
+              value : value
+          }));
 
         }
 
         this.setState({
-          kantaObservation: arr
+          kantaMeasurement: arr
         })
 
         //return responseJson;
     })
   }
+
+  
   
 
 }

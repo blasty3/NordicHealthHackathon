@@ -3,10 +3,10 @@ import { View, Text, Image, TouchableOpacity, TextInput } from 'react-native';
 import styles from './LoginStyles';
 import { Images } from '../../Themes';
 import Utils from '../../Utils/Utils';
-import StringUtils from '../../Utils/StringUtils';
 import { connect } from 'react-redux';
 import UserActions from '../../Redux/UserRedux';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
+import StringUtils from '../../Utils/StringUtils'
 
 
 class LoginScreen extends Component {
@@ -20,7 +20,6 @@ class LoginScreen extends Component {
     }
 
     render() {
-
         var { email, password } = this.state
 
         return (
@@ -70,7 +69,7 @@ class LoginScreen extends Component {
     }
 
     onLogin = () => {
-        const { fullname, email, password, passwordConfirm } = this.state;
+        const { fullname, email, password } = this.state;
         if (Utils.isUndefined(email) || Utils.isUndefined(password)) {
             Utils.showMessage("Please enter full information")
         } else if (!StringUtils.validatePassword(password)) {
@@ -90,8 +89,8 @@ class LoginScreen extends Component {
     }
 
     componentWillReceiveProps(newProps) {
-        if (!Utils.isUndefined(newProps.user) && this.state.isLogin && newProps.loggedIn && !newProps.errorLogin) {
-            Utils.showMessage("Login success");
+      console.log("componentWillReceiveProps", newProps)
+        if (!Utils.isUndefined(newProps.user) && newProps.loggedIn && !newProps.errorLogin) {
             this.props.navigation.navigate("PrimaryNav")
         } else {
             if (!Utils.isUndefined(newProps.user) && this.state.isLogin && !newProps.loggedIn && newProps.errorLogin) {

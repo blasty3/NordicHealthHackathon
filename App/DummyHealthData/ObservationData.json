@@ -8,7 +8,12 @@
                     "http://phr.kanta.fi/StructureDefinition/fiphr-heartrate-stu3"
                 ]
             },
+            
             "language":"en",
+            "text": {
+                "status": "generated",
+                "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"> Heart rate 125/min </div>"
+            },
             "identifier": [
                 {
                     "system":"urn:ietf:rfc:3986",
@@ -38,15 +43,15 @@
             "subject":{
                 "reference":"Patient/352186dd-8f66-4e7d-a7fd-9e257d4b7080"
             },
-            "effectiveDateTime":"2017-11-20T11:46:00+02:00",
-            "issued":"2017-11-20T11:46:00+02:00",
+            "effectiveDateTime":"2019-03-20T11:46:00+02:00",
+            "issued":"2019-03-20T11:46:00+02:00",
             "performer": [
                 {
                     "reference":"Patient/352186dd-8f66-4e7d-a7fd-9e257d4b7080"
                 }
             ],
             "valueQuantity":{
-                "value":"125",
+                "value":125,
                 "unit":"/min",
                 "system":"http://unitsofmeasure.org",
                 "code":"/min"
@@ -61,6 +66,10 @@
                 ]
             },
             "language":"en",
+            "text": {
+                "status": "generated",
+                "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"> Heart rate 165/min </div>"
+            },
             "identifier": [
                 {
                     "system":"urn:ietf:rfc:3986",
@@ -90,15 +99,15 @@
             "subject":{
                 "reference":"Patient/352186dd-8f66-4e7d-a7fd-9e257d4b7080"
             },
-            "effectiveDateTime":"2017-11-20T11:50:00+02:00",
-            "issued":"2017-11-20T11:50:00+02:00",
+            "effectiveDateTime":"2019-03-20T11:50:00+02:00",
+            "issued":"2019-03-20T11:50:00+02:00",
             "performer": [
                 {
                     "reference":"Patient/352186dd-8f66-4e7d-a7fd-9e257d4b7080"
                 }
             ],
             "valueQuantity":{
-                "value":"165",
+                "value":165,
                 "unit":"/min",
                 "system":"http://unitsofmeasure.org",
                 "code":"/min"
@@ -113,6 +122,10 @@
                 ]
             },
             "language":"en",
+            "text": {
+                "status": "generated",
+                "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"> Heart rate 90/min </div>"
+            },
             "identifier": [
                 {
                     "system":"urn:ietf:rfc:3986",
@@ -142,15 +155,15 @@
             "subject":{
                 "reference":"Patient/352186dd-8f66-4e7d-a7fd-9e257d4b7080"
             },
-            "effectiveDateTime":"2017-11-20T11:55:00+02:00",
-            "issued":"2017-11-20T11:55:00+02:00",
+            "effectiveDateTime":"2019-03-20T11:55:00+02:00",
+            "issued":"2019-03-20T11:55:00+02:00",
             "performer": [
                 {
                     "reference":"Patient/352186dd-8f66-4e7d-a7fd-9e257d4b7080"
                 }
             ],
             "valueQuantity":{
-                "value":"90",
+                "value":90,
                 "unit":"/min",
                 "system":"http://unitsofmeasure.org",
                 "code":"/min"
@@ -165,6 +178,10 @@
                 ]
             },
             "language":"en",
+            "text": {
+                "status": "generated",
+                "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"> Heart rate 110/min </div>"
+            },
             "identifier": [
                 {
                     "system":"urn:ietf:rfc:3986",
@@ -194,15 +211,15 @@
             "subject":{
                 "reference":"Patient/352186dd-8f66-4e7d-a7fd-9e257d4b7080"
             },
-            "effectiveDateTime":"2017-11-20T12:10:00+02:00",
-            "issued":"2017-11-20T12:10:00+02:00",
+            "effectiveDateTime":"2019-03-20T12:10:00+02:00",
+            "issued":"2019-03-20T12:10:00+02:00",
             "performer": [
                 {
                     "reference":"Patient/352186dd-8f66-4e7d-a7fd-9e257d4b7080"
                 }
             ],
             "valueQuantity":{
-                "value":"110",
+                "value":110,
                 "unit":"/min",
                 "system":"http://unitsofmeasure.org",
                 "code":"/min"
@@ -217,6 +234,10 @@
                 ]
             },
             "language":"en",
+            "text": {
+                "status": "generated",
+                "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"> Heart rate 102/min </div>"
+            },
             "identifier": [
                 {
                     "system":"urn:ietf:rfc:3986",
@@ -246,15 +267,15 @@
             "subject":{
                 "reference":"Patient/352186dd-8f66-4e7d-a7fd-9e257d4b7080"
             },
-            "effectiveDateTime":"2017-11-20T12:20:00+02:00",
-            "issued":"2017-11-20T12:20:00+02:00",
+            "effectiveDateTime":"2019-03-20T12:20:00+02:00",
+            "issued":"2019-03-20T12:20:00+02:00",
             "performer": [
                 {
                     "reference":"Patient/352186dd-8f66-4e7d-a7fd-9e257d4b7080"
                 }
             ],
             "valueQuantity":{
-                "value":"102",
+                "value":102,
                 "unit":"/min",
                 "system":"http://unitsofmeasure.org",
                 "code":"/min"

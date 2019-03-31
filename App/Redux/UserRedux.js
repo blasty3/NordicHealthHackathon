@@ -43,10 +43,10 @@ export const INITIAL_STATE = Immutable({
 // LOGIN =================================================================================
 export const login = (state, action) => {
     var { user } = action
-    if(( user.email== state.user.email ) &&( user.password && state.user.email )){
-        return state.merge({ loggedIn: true,errorLogin:false})
+    if( user.password &&  state.user && state.user.email && user.email === state.user.email ){
+        return state.merge({ loggedIn: true, errorLogin:false})
     }
-    return state.merge({ loggedIn: false,errorLogin:true})
+    return state.merge({ loggedIn: false, errorLogin:true})
 }
 
 // SIGN UP =================================================================================

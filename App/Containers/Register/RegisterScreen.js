@@ -83,6 +83,9 @@ class RegisterScreen extends Component {
                         />
                     </View>
                     <View style={styles.containerAction} >
+                        <TouchableOpacity style={styles.buttonContainer} onPress={() => this.onCancel()}>
+                          <Text style={styles.textButton}>Cancel</Text>
+                        </TouchableOpacity>
                         <TouchableOpacity style={styles.buttonContainer} onPress={() => this.onRegister()}>
                             <Text style={styles.textButton}>Sign up</Text>
                         </TouchableOpacity>
@@ -125,6 +128,10 @@ class RegisterScreen extends Component {
             this.props.navigation.navigate("LoginScreen")
         }
     }
+
+  onCancel () {
+    this.props.navigation.goBack()
+  }
 }
 
 const mapStateToProps = (state) => {
