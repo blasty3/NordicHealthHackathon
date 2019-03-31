@@ -103,8 +103,47 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
+        def appName = ''
+        def appId = ''
+        def contractId = ''
+        def p12FileName = ''
+        def p12PassPhrase = ''
+
+        try {
+            def keystorePropertiesFile = file("build.properties")
+            def keystoreProperties = new Properties()
+            keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+
+            printf keystoreProperties.toString()
+
+            appName = keystoreProperties['app_name']
+            appId = keystoreProperties['app_id']
+            contractId = keystoreProperties['contract_id']
+            p12FileName = keystoreProperties['p12_keystore_filename']
+            p12PassPhrase = keystoreProperties['p12_keystore_passphrase']
+
+        } catch (ex) {
+            printf 'Unable to read build.properties file'
+        }
+
+        resValue "string", "app_id", appId
+        resValue "string", "app_name", appName
+        resValue "string", "p12_pass", p12PassPhrase
+        resValue "string", "contract_id", contractId
+        resValue "string", "p12_filename", p12FileName
+
         ndk {
-            abiFilters "armeabi-v7a", "x86"
+            abiFilters "armeabi-v7a", "x86", 'armeabi', 'arm64-v8a'
+        }
+
+        packagingOptions {
+            // The project react-native does not provide 64-bit binaries at the
+            // time of this writing. Unfortunately, packaging any 64-bit
+            // binaries into the .apk will crash the app at runtime on 64-bit
+            // platforms.
+            exclude '/lib/mips64/**'
+            exclude '/lib/arm64-v8a/**'
+            exclude '/lib/x86_64/**'
         }
     }
     splits {
@@ -137,12 +176,14 @@ android {
 }
 
 dependencies {
-    compile project(':react-native-i18n')
-    compile project(':react-native-vector-icons')
-    compile project(':react-native-gesture-handler')
-    implementation fileTree(dir: "libs", include: ["*.jar"])
-    implementation "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
-    implementation "com.facebook.react:react-native:+"  // From node_modules
+    implementation project(':react-native-i18n')
+    implementation project(':react-native-vector-icons')
+    implementation project(':react-native-gesture-handler')
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.1'
+    implementation "com.facebook.react:react-native:+" // From node_modules
+    implementation 'me.digi.sdk:digime-core:1.4.0'
 }
 
 // Run this once to be able to run the application with BUCK
