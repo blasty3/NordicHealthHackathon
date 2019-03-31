@@ -9,7 +9,7 @@ import { Colors, Metrics } from '../../Themes';
 import ChartComponent from '../../Components/Home/ChartComponent';
 
 // Styles
-export default class HomeScreen extends Component {
+export default class ReportHealthData extends Component {
     render() {
         return (
             <View style={{ flex: 1 }}>

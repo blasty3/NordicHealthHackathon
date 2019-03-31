@@ -32,7 +32,7 @@ export default class ConnectScreen extends Component {
           <Text> HealthResults {this.state.icelandData}  </Text>
           <Text> NoiseResults {this.state.noiseLevelData}  </Text>
           <Text> KantaResp {this.state.kantaResp}  </Text>
-           <Text> KantaData {this.state.heartRate}  </Text>
+           <Text> KantaData {this.state.kantaMeasurement}  </Text>
           <Button title="IcelandHealth" onPress = {this.GetIcelandHealth}>  </Button>
           <Button title="NoiseData" onPress = {this.GetNoiseEnvironment}>  </Button>
           <Button title="UploadToKanta" onPress = {this.UploadObservationsToKanta}>  </Button>
@@ -95,6 +95,22 @@ export default class ConnectScreen extends Component {
 
     Format results :
      {
+          hospitalVisitHistory : [{
+                "id": 14692,
+               "appointmentId": 76138,
+               "arrivalDate": "2019-03-07T10:13:10.984Z",
+                "healthcareProvider": "Halldóra Vagnsdóttir",
+              "typeOfHealthcare": "Interview",
+              "location": "Landspítalinn Hringbraut"
+      },
+      {
+              "id": 15014,
+              "appointmentId": 77851,
+              "arrivalDate": "2019-03-11T12:03:10.984Z",
+            "healthcareProvider": "Landspítalinn Hringbraut",
+            "typeOfHealthcare": "Diagnostic imaging",
+            "location": "Röntgen Domus"
+      }]
           treatmentStartTime :
           treatmentEndTime :
           diagnosisData :
@@ -123,6 +139,7 @@ export default class ConnectScreen extends Component {
 
           var allData =  data.returnData["treatmentPlans"];
 
+          result.hospitalVisitHistory= data.returnData["arrivalData"];
           result.treatmentStartTime = data.returnData["treatmentPlans"]["startDate"];
           result.treatmentEndTime = data.returnData["treatmentPlans"]["endDate"];
           result.diagnosisData = data.returnData["diagnosisData"];

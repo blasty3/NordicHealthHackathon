@@ -1,52 +1,50 @@
 export default initData = {
-  settingPersonalHealth: [
+  PersonalDataSource: [
     {
       text: 'Digi.me',
       value: true,
-
+      id: 'digime'
     },
     {
       text: 'Fitbit',
       value: false,
-
+      id: 'fitbit'
     },
     {
       text: 'Tango Go+',
-      value: true,
-
+      value: false,
+      id: 'tangogo'
     }
   ],
-  settingEnvironmentalData: [
+  EnvironmentDataSource: [
     {
       text: 'City of Helsinki',
       value: true,
+      id: 'helsinki'
 
     },
     {
       text: 'Aalto University',
       value: false,
+      id: 'aalto'
 
     },
   ],
-  settingHospitalData: [
+  HospitalDataSource: [
     {
       text: 'Iceland Health Directorat',
       value: true,
+      id: 'icelandHealth'
 
     },
     {
       text: 'Kanta',
       value: true,
-
-    },
-    {
-      text: 'Tango Go+',
-      value: true,
-
+      id: 'kanta'
     }
   ],
 
-  homePersonalHealth: [
+  PersonalDataView: [
     {
       text: 'Sleep',
       value: true,
@@ -64,7 +62,7 @@ export default initData = {
     }
   ],
 
-  homeEnvironmentalData: [
+  EnvironmentalDataView: [
     {
       text: 'Brightness',
       value: true,
@@ -78,7 +76,7 @@ export default initData = {
     },
   ],
 
-  homeHospitalData: [
+  HospitalDataView: [
     {
       text: 'Appointment data',
       value: true,

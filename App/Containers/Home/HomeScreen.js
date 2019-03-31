@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
-import { Text, View, ScrollView, FlatList, 
-  TouchableOpacity ,Switch} from 'react-native'
+import { View, ScrollView } from 'react-native'
 import HeaderComponent from '../../Components/Header/HeaderComponent';
-import styles from './HomeStyles'
-import { Colors, Metrics } from '../../Themes';
+import { Metrics } from '../../Themes';
 import ChartComponent from '../../Components/Home/ChartComponent'
 import DataComponent from '../../Components/Home/DataComponent'
+import { connect } from 'react-redux'
 const data =[
   {
     appointment:"2019/03/13",
@@ -34,13 +33,17 @@ const data =[
 ]
 
 // Styles
-export default class HomeScreen extends Component {
+class HomeScreen extends Component {
+  constructor() {
+    super()
+  }
+
   render() {
     return (
       <View style={{ flex: 1 }}>
         <HeaderComponent
-          titleScreen={"Select the data sources"}
-          onPress={()=>{}}
+          titleScreen={"HEALTH DATA"}
+          onPress={()=> {}}
         />
         <ScrollView style={{ marginTop: Metrics.sizeHeight * 2 }}>
         <ChartComponent title="Personal Health" chartData={[{title:"Sleep"},{title:"Heart rate"}]}/>
@@ -50,4 +53,33 @@ export default class HomeScreen extends Component {
       </View>
     )
   }
+
+  gotoSettingScreen = (screen) => {
+    this.props.navigation.navigate(screen)
+  }
+
+  componentDidMount () {
+    this.checkSetting(this.props)
+  }
+
+  componentWillReceiveProps(newProps) {
+    this.checkSetting(newProps)
+  }
+
+  checkSetting (props) {
+    console.log("home props", props)
+
+    if (props.dataSource == null) {
+      this.gotoSettingScreen("DataSourceScreen")
+    }
+  }
 }
+
+const mapStateToProps = (state) => {
+  const { dataSource, dataView } = state.setting
+  return {
+    dataSource, dataView
+  }
+}
+
+export default connect(mapStateToProps, null)(HomeScreen)

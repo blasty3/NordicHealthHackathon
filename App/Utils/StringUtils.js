@@ -378,20 +378,7 @@ const StringUtils = {
             baseHtml = baseHtml.replace(regex, config.theme.mainColor);
         }
 
-        baseHtml = baseHtml.split('src=\"https://teraapp.net:8001').join('src="http://teraapp.net:8000');
         baseHtml = baseHtml.split('src=\"//www.youtube.com').join('src="https://www.youtube.com');
-
-        ////remove mixed content
-        //regex = "https://teraapp.net:8001";
-        //while (baseHtml.search(regex) !== -1) {
-        //    baseHtml = baseHtml.replace(regex, "http://teraapp.net:8000");
-        //}
-        //
-        ////replace youtube string
-        //regex = "src=\"//www.youtube.com/embed/";
-        //while (baseHtml.search(regex) !== -1) {
-        //    baseHtml = baseHtml.replace(regex, "src=\"https://www.youtube.com/embed/");
-        //}
 
         const window = Dimensions.get('window');
         const videoWidth = window.width - 16;

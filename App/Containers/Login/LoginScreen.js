@@ -13,8 +13,8 @@ class LoginScreen extends Component {
     constructor() {
         super()
         this.state = {
-            email: "",
-            password: "",
+            email: "demo@gaiota.com",
+            password: "123456",
             isLogin: false
         }
     }
@@ -70,13 +70,16 @@ class LoginScreen extends Component {
 
     onLogin = () => {
         const { fullname, email, password } = this.state;
+        
         if (Utils.isUndefined(email) || Utils.isUndefined(password)) {
             Utils.showMessage("Please enter full information")
         } else if (!StringUtils.validatePassword(password)) {
             Utils.showMessage("Password length must be longer than 6 characters")
         } else if (!StringUtils.validateEmail(email)) {
             Utils.showMessage("Email is not in the correct format")
-        } else {
+        } else 
+        
+        {
             this.state.isLogin = true
 
             var params = {
@@ -88,15 +91,23 @@ class LoginScreen extends Component {
         }
     }
 
-    componentWillReceiveProps(newProps) {
+    checkLogin = (newProps) => {
       console.log("componentWillReceiveProps", newProps)
-        if (!Utils.isUndefined(newProps.user) && newProps.loggedIn && !newProps.errorLogin) {
-            this.props.navigation.navigate("PrimaryNav")
-        } else {
-            if (!Utils.isUndefined(newProps.user) && this.state.isLogin && !newProps.loggedIn && newProps.errorLogin) {
-                Utils.showMessage("Login failure");
-            }
+      if (!Utils.isUndefined(newProps.user) && newProps.loggedIn && !newProps.errorLogin) {
+        this.props.navigation.navigate("PrimaryNav")
+      } else {
+        if (this.state.isLogin && newProps.errorLogin) {
+          Utils.showMessage("Login failure");
         }
+      }
+    }
+
+    componentDidMount () {
+      this.checkLogin(this.props)
+    }
+
+    componentWillReceiveProps(newProps) {
+      this.checkLogin(newProps)
     }
 }
 

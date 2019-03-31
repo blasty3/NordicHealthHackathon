@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import SettingDataSourceScreen from './SettingDataSourceScreen';
-import SettingSelectScreen from './SettingSelectScreen';
+import DataSourceScreen from './DataSourceScreen';
+import DataViewScreen from './DataViewScreen';
 
 // Styles
 export default class SettingScreen extends Component {
@@ -11,13 +11,13 @@ export default class SettingScreen extends Component {
     }
   }
   render() {
-    if (!this.state.isSelectDataSource) return <SettingDataSourceScreen
+    if (!this.state.isSelectDataSource) return <DataSourceScreen
     onPress={() => {
       this.setState({
         isSelectDataSource: true
       })
     }}/>
-    return <SettingSelectScreen
+    return <DataViewScreen
       onPress={() => {
         this.setState({
           isSelectDataSource: false

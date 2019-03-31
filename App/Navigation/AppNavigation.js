@@ -10,18 +10,18 @@ import SettingScreen from '../Containers/Setting/SettingScreen'
 import LoginScreen from '../Containers/Login/LoginScreen'
 import RegisterScreen from '../Containers/Register/RegisterScreen'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import SettingSelectScreen from '../Containers/Setting/SettingSelectScreen'
-import SettingDataSourceScreen from '../Containers/Setting/SettingDataSourceScreen'
+import DataViewScreen from '../Containers/Setting/DataViewScreen'
+import DataSourceScreen from '../Containers/Setting/DataSourceScreen'
 
 
 const SettingNavigationStack = createStackNavigator(
   {
     SettingScreen: {
-      screen: SettingDataSourceScreen,
+      screen: DataSourceScreen,
       navigationOptions: { header: null }
     },
     SystemSettingScreen: {
-      screen: SettingSelectScreen,
+      screen: DataViewScreen,
       navigationOptions: { header: null }
     }
   }, {
@@ -29,10 +29,30 @@ const SettingNavigationStack = createStackNavigator(
   }
 )
 
+
+const HomeNavigationStack = createStackNavigator(
+  {
+    HomeScreen: {
+      screen: HomeScreen,
+      navigationOptions: { header: null }
+    },
+    DataSourceScreen: {
+      screen: DataSourceScreen,
+      navigationOptions: { header: null }
+    },
+    DataViewScreen: {
+      screen: DataViewScreen,
+      navigationOptions: { header: null }
+    }
+  }, {
+    initialRouteName: 'HomeScreen',
+  }
+)
+
 // Manifest of possible screens
 const PrimaryNav = createBottomTabNavigator({
   HomeScreen: {
-    screen: HomeScreen,
+    screen: HomeNavigationStack,
     navigationOptions: navigationOption("home", "Home")
   },
   CircleScreen: {
@@ -50,7 +70,7 @@ const PrimaryNav = createBottomTabNavigator({
 }, {
     // Default config for all screens
     headerMode: 'none',
-    initialRouteName: 'SettingScreen',
+    initialRouteName: 'HomeScreen',
     navigationOptions: {
       headerStyle: styles.header
     }
